@@ -1,0 +1,75 @@
+$bg-color: #fbe1b6;
+$nav-color: #daa46d;
+$serif-font: "Cantata One", serif;
+$sans-serif-font: "Zen Maru Gothic", sans-bserif;
+$font-color: #463621;
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: $bg-color;
+    color: $font-color;
+    font-family: $sans-serif-font;
+    padding: 0;
+    margin: 0;
+}
+
+.title-container {
+    display: flex;
+    margin: 5em;
+    width: 80%;
+
+    .title-block {
+        flex: 2;
+        font-family: $serif-font;
+
+        h1 {
+            font-size: 8em;
+        }
+
+        h2 {
+            margin-top: 2em;
+            font-size: 5em;
+        }
+    }
+
+    .title-image {
+        flex: 1;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.nav-links {
+    background-color: $nav-color;
+    padding: 2em;
+    padding-left: 0;
+    position: relative;
+    top: -2em;
+
+    a {
+        padding: 1em 2em;;
+        text-decoration: none;
+        color: $font-color;
+        font-size: 2em;
+
+        
+        &:hover {
+            -moz-transition: background-color .2s ease-out;
+            -o-transition: background-color .2s ease-out;
+            -webkit-transition: background-color .2s ease-out;
+            transition: background-color .2s ease-out;
+            background-color: #bc6f40;
+        } /* CSS is a fucking joke */
+        -moz-transition: background-color .2s ease-out;
+        -o-transition: background-color .2s ease-out;
+        -webkit-transition: background-color .2s ease-out;
+        transition: background-color .2s ease-out;
+        background-color: $nav-color;
+    }
+}
