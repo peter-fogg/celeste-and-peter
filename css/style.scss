@@ -19,32 +19,58 @@ body {
 
 .title-container {
     display: flex;
-    margin: 5em;
+    flex-flow: row wrap;
+
+    margin: 0 5em;
     width: 80%;
 
+    * {
+        flex: 1 100%;
+        padding: 20px;
+    }
+}
+
+.title-block {
+    margin: auto;
+
+    font-family: $serif-font;
+
+    h1 {
+        font-size: 5em;
+    }
+
+    h2 {
+        margin-top: 2em;
+        font-size: 3em;
+    }
+}
+
+.title-image {
+    img {
+        display: inline;
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 1280px) {
+    .title-container > * {
+        flex: 1 0 0;
+    }
+
     .title-block {
-        flex: 2;
-        font-family: $serif-font;
+        flex: 2 0 0;
 
         h1 {
             font-size: 8em;
         }
 
         h2 {
-            margin-top: 2em;
             font-size: 5em;
-        }
-    }
-
-    .title-image {
-        flex: 1;
-
-        img {
-            width: 100%;
         }
     }
 }
 
+// TODO responsify this
 .nav-links {
     background-color: $nav-color;
     padding: 2em;
