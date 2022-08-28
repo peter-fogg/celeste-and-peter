@@ -17,6 +17,34 @@ body {
     margin: 0;
 }
 
+.main-container {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+
+    h2 {
+        font-size: 2em;
+    }
+}
+
+.subpage-title {
+    font-family: $serif-font;
+    font-size: 3em;
+
+    @media all and (min-width: 800px) {
+        font-size: 5em;
+    }
+}
+
+p {
+    font-size: 2em;
+//    text-align: left;
+}
+
+.deets-list {
+    
+}
+
 .title-container {
     display: flex;
     flex-flow: row wrap;
