@@ -1,0 +1,8 @@
+name: celeste-and-peter
+static_sites:
+- environment-slug: html
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: peter-fogg/celeste-and-peter
+  name: celeste-and-peter

@@ -1,0 +1,8 @@
+spec:
+  name: celeste-and-peter
+  static_sites:
+  - environment_slug: html
+    git:
+      branch: main
+      repo_clone_url: https://github.com/peter-fogg/celeste-and-peter.git
+    name: celeste-and-peter
