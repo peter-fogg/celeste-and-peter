@@ -1,0 +1,146 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #fbe1b6;
+  color: #463621;
+  font-family: "Zen Maru Gothic", sans-bserif;
+  padding: 0;
+  margin: 0;
+}
+
+.main-container {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+.main-container h2 {
+  font-size: 2em;
+}
+
+.subpage-title {
+  font-family: "Cantata One", serif;
+  font-size: 3em;
+}
+@media all and (min-width: 800px) {
+  .subpage-title {
+    font-size: 5em;
+  }
+}
+
+p {
+  font-size: 2em;
+}
+
+.title-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 5em;
+  width: 80%;
+}
+.title-container * {
+  flex: 1 100%;
+  padding: 20px;
+}
+
+.title-block {
+  margin: auto;
+  font-family: "Cantata One", serif;
+}
+.title-block h1 {
+  font-size: 3em;
+}
+.title-block h2 {
+  margin-top: 2em;
+  font-size: 2em;
+}
+
+.title-image img {
+  display: inline;
+  width: 100%;
+}
+
+@media all and (min-width: 800px) {
+  .title-block {
+    flex: 2 0 0;
+  }
+  .title-block h1 {
+    font-size: 5em;
+  }
+  .title-block h2 {
+    font-size: 3em;
+  }
+}
+@media all and (min-width: 1280px) {
+  .title-container > * {
+    flex: 1 0 0;
+  }
+  .title-block {
+    flex: 2 0 0;
+  }
+  .title-block h1 {
+    font-size: 8em;
+  }
+  .title-block h2 {
+    font-size: 5em;
+  }
+}
+.nav-bar {
+  background-color: #daa46d;
+  padding: 0 2em;
+  padding-left: 0;
+  position: relative;
+}
+@media all and (max-width: 900px) {
+  .nav-bar {
+    width: 100%;
+  }
+}
+
+.nav-links {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+@media all and (max-width: 900px) {
+  .nav-links {
+    text-align: center;
+  }
+}
+.nav-links li {
+  display: inline-block;
+  /* CSS is a fucking joke */
+  -moz-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  -webkit-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+  background-color: #daa46d;
+}
+@media all and (min-width: 900px) {
+  .nav-links li {
+    padding: 1em 2em;
+  }
+}
+@media all and (max-width: 900px) {
+  .nav-links li {
+    padding: 1em;
+    padding-top: 1em;
+    font-size: 0.5em;
+  }
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #463621;
+  font-size: 2em;
+}
+.nav-links li:hover {
+  -moz-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  -webkit-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+  background-color: #bc6f40;
+}
+
+/*# sourceMappingURL=style.css.map */
