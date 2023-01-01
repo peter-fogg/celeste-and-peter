@@ -1,8 +1,9 @@
 $bg-color: #fbe1b6;
-$nav-color: #daa46d;
-$serif-font: "Cantata One", serif;
+$nav-color: #ce9f51;
+$serif-font-head: "Cantata One", serif;
+$serif-font-sub: "Alatsi", serif;
 $sans-serif-font: "Zen Maru Gothic", sans-bserif;
-$font-color: #463621;
+$font-color: #546121;
 
 html {
     padding: 0;
@@ -28,7 +29,7 @@ body {
 }
 
 .subpage-title {
-    font-family: $serif-font;
+    font-family: $serif-font-head;
     font-size: 3em;
 
     @media all and (min-width: 800px) {
@@ -61,15 +62,14 @@ p {
 .title-block {
     margin: auto;
 
-    font-family: $serif-font;
-
     h1 {
-        font-size: 3em;
+        font-family: $serif-font-head;
+        font-size: 2em;
     }
 
     h2 {
-        margin-top: 2em;
-        font-size: 2em;
+        font-family: $serif-font-sub;
+        font-size: 1em;
     }
 }
 

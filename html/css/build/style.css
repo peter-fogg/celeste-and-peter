@@ -5,7 +5,7 @@ html {
 
 body {
   background-color: #fbe1b6;
-  color: #463621;
+  color: #546121;
   font-family: "Zen Maru Gothic", sans-bserif;
   padding: 0;
   margin: 0;
@@ -47,14 +47,14 @@ p {
 
 .title-block {
   margin: auto;
-  font-family: "Cantata One", serif;
 }
 .title-block h1 {
-  font-size: 3em;
+  font-family: "Cantata One", serif;
+  font-size: 2em;
 }
 .title-block h2 {
-  margin-top: 2em;
-  font-size: 2em;
+  font-family: "Alatsi", serif;
+  font-size: 1em;
 }
 
 .title-image img {
@@ -88,7 +88,7 @@ p {
   }
 }
 .nav-bar {
-  background-color: #daa46d;
+  background-color: #ce9f51;
   padding: 0 2em;
   padding-left: 0;
   position: relative;
@@ -116,7 +116,7 @@ p {
   -o-transition: background-color 0.2s ease-out;
   -webkit-transition: background-color 0.2s ease-out;
   transition: background-color 0.2s ease-out;
-  background-color: #daa46d;
+  background-color: #ce9f51;
 }
 @media all and (min-width: 900px) {
   .nav-links li {
@@ -132,7 +132,7 @@ p {
 }
 .nav-links li a {
   text-decoration: none;
-  color: #463621;
+  color: #546121;
   font-size: 2em;
 }
 .nav-links li:hover {
