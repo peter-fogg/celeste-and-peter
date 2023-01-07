@@ -224,7 +224,6 @@ p {
     @media all and (max-width: $slider-breakpoint) {
         scroll-snap-points-x: repeat($slider-width-mobile);
     }
-    scroll-snap-type: mandatory;
 }
 
 .slides::-webkit-scrollbar {
@@ -284,13 +283,14 @@ p {
 
 .slider > a {
     display: inline-flex;
-    width: 1.5rem;
-    height: 1.5rem;
-    background: white;
+    width: 1rem;
+    height: 1rem;
+    font-size: .7rem;
     text-decoration: none;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    border: 1px solid $font-color;
     margin: 0 0 0.5rem 0;
     position: relative;
 }
