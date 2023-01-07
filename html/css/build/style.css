@@ -4,17 +4,20 @@ html {
 }
 
 body {
-  background-color: #fbe1b6;
+  background-color: #fcebcf;
   color: #546121;
   font-family: "Zen Maru Gothic", sans-bserif;
   padding: 0;
   margin: 0;
 }
 
+a {
+  color: #546121;
+}
+
 .main-container {
   margin: auto;
   width: 80%;
-  text-align: center;
 }
 .main-container h2 {
   font-size: 2em;
@@ -37,7 +40,7 @@ p {
 .title-container {
   display: flex;
   flex-flow: row wrap;
-  margin: 0 5em;
+  margin: 0 2em;
   width: 80%;
 }
 .title-container * {
@@ -45,16 +48,20 @@ p {
   padding: 20px;
 }
 
-.title-block {
-  margin: auto;
-}
 .title-block h1 {
   font-family: "Cantata One", serif;
   font-size: 2em;
+  margin: 0;
 }
 .title-block h2 {
   font-family: "Alatsi", serif;
   font-size: 1em;
+  margin: 0;
+}
+
+#durango {
+  display: inline;
+  width: 100%;
 }
 
 .title-image img {
@@ -81,10 +88,10 @@ p {
     flex: 2 0 0;
   }
   .title-block h1 {
-    font-size: 8em;
+    font-size: 6em;
   }
   .title-block h2 {
-    font-size: 5em;
+    font-size: 2em;
   }
 }
 .nav-bar {
@@ -110,6 +117,7 @@ p {
   }
 }
 .nav-links li {
+  padding: 0;
   display: inline-block;
   /* CSS is a fucking joke */
   -moz-transition: background-color 0.2s ease-out;
@@ -118,22 +126,22 @@ p {
   transition: background-color 0.2s ease-out;
   background-color: #ce9f51;
 }
+.nav-links li a {
+  display: block;
+  text-decoration: none;
+  font-size: 2em;
+}
 @media all and (min-width: 900px) {
-  .nav-links li {
-    padding: 1em 2em;
+  .nav-links li a {
+    padding: 0.5em 1em;
   }
 }
 @media all and (max-width: 900px) {
-  .nav-links li {
+  .nav-links li a {
     padding: 1em;
     padding-top: 1em;
     font-size: 0.5em;
   }
-}
-.nav-links li a {
-  text-decoration: none;
-  color: #546121;
-  font-size: 2em;
 }
 .nav-links li:hover {
   -moz-transition: background-color 0.2s ease-out;
@@ -141,6 +149,21 @@ p {
   -webkit-transition: background-color 0.2s ease-out;
   transition: background-color 0.2s ease-out;
   background-color: #bc6f40;
+}
+
+.things-to-do {
+  padding: 0;
+  text-align: center;
+}
+.things-to-do li {
+  margin: 0.5em 0;
+  text-align: left;
+  font-size: 1.5em;
+  list-style: none;
+}
+.things-to-do li h3 {
+  font-size: 1.5em;
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

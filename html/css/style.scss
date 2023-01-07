@@ -1,4 +1,4 @@
-$bg-color: #fbe1b6;
+$bg-color: #fcebcf;
 $nav-color: #ce9f51;
 $serif-font-head: "Cantata One", serif;
 $serif-font-sub: "Alatsi", serif;
@@ -18,10 +18,13 @@ body {
     margin: 0;
 }
 
+a {
+    color: $font-color;
+}
+
 .main-container {
     margin: auto;
     width: 80%;
-    text-align: center;
 
     h2 {
         font-size: 2em;
@@ -39,7 +42,6 @@ body {
 
 p {
     font-size: 2em;
-//    text-align: left;
 }
 
 .deets-list {
@@ -50,7 +52,7 @@ p {
     display: flex;
     flex-flow: row wrap;
 
-    margin: 0 5em;
+    margin: 0 2em;
     width: 80%;
 
     * {
@@ -60,17 +62,23 @@ p {
 }
 
 .title-block {
-    margin: auto;
 
     h1 {
         font-family: $serif-font-head;
         font-size: 2em;
+        margin: 0;
     }
 
     h2 {
         font-family: $serif-font-sub;
         font-size: 1em;
+        margin: 0;
     }
+}
+
+#durango {
+    display: inline;
+    width: 100%;
 }
 
 .title-image {
@@ -103,11 +111,11 @@ p {
         flex: 2 0 0;
 
         h1 {
-            font-size: 8em;
+            font-size: 6em;
         }
 
         h2 {
-            font-size: 5em;
+            font-size: 2em;
         }
     }
 }
@@ -133,22 +141,22 @@ p {
     }
 
     li {
+        padding: 0;
         display: inline-block;
 
-        @media all and (min-width: 900px) {
-            padding: 1em 2em;
-        }
-
-        @media all and (max-width: 900px) {
-            padding: 1em;
-            padding-top: 1em;
-            font-size: .5em;
-        }
-
         a {
+            display: block;
             text-decoration: none;
-            color: $font-color;
             font-size: 2em;
+            @media all and (min-width: 900px) {
+                padding: .5em 1em;
+            }
+
+            @media all and (max-width: 900px) {
+                padding: 1em;
+                padding-top: 1em;
+                font-size: .5em;
+            }
         }
         
         &:hover {
@@ -163,5 +171,21 @@ p {
         -webkit-transition: background-color .2s ease-out;
         transition: background-color .2s ease-out;
         background-color: $nav-color;
+    }
+}
+
+.things-to-do {
+    padding: 0;
+    text-align: center;
+
+    li {
+        margin: .5em 0;
+        h3 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+        text-align: left;
+        font-size: 1.5em;
+        list-style: none;
     }
 }
