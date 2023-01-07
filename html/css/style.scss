@@ -252,7 +252,10 @@ p {
         width: $slider-width-mobile;
         height: $slider-width-mobile;
     }
-    margin-right: 50px;
+    margin-right: 10px;
+    &:last-of-type {
+        margin-right: 0;
+    }
     border-radius: 10px;
     background: #eee;
     transform-origin: center center;
