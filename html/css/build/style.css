@@ -144,7 +144,7 @@ p {
   .nav-links li a {
     padding: 1em;
     padding-top: 1em;
-    font-size: 0.5em;
+    font-size: 0.75em;
   }
 }
 .nav-links li:hover {
