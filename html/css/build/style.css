@@ -60,12 +60,16 @@ p {
 }
 
 #durango {
-  display: inline;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 90%;
+  border-radius: 10px;
 }
 
 .title-image img {
   display: inline;
+  border-radius: 30px;
   width: 100%;
 }
 
@@ -151,17 +155,17 @@ p {
   background-color: #bc6f40;
 }
 
-.things-to-do {
+.things-to-do, .deets {
   padding: 0;
   text-align: center;
 }
-.things-to-do li {
+.things-to-do li, .deets li {
   margin: 0.5em 0;
   text-align: left;
   font-size: 1.5em;
   list-style: none;
 }
-.things-to-do li h3 {
+.things-to-do li h3, .deets li h3 {
   font-size: 1.5em;
   margin: 0;
 }

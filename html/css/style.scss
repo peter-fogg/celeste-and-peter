@@ -44,10 +44,6 @@ p {
     font-size: 2em;
 }
 
-.deets-list {
-    
-}
-
 .title-container {
     display: flex;
     flex-flow: row wrap;
@@ -77,13 +73,17 @@ p {
 }
 
 #durango {
-    display: inline;
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 90%;
+    border-radius: 10px;
 }
 
 .title-image {
     img {
         display: inline;
+        border-radius: 30px;
         width: 100%;
     }
 }
@@ -174,7 +174,7 @@ p {
     }
 }
 
-.things-to-do {
+.things-to-do, .deets {
     padding: 0;
     text-align: center;
 
