@@ -5,7 +5,9 @@ $serif-font-sub: "Alatsi", serif;
 $sans-serif-font: "Zen Maru Gothic", sans-bserif;
 $font-color: #546121;
 
+$slider-breakpoint: 600px;
 $slider-width: 500px;
+$slider-width-mobile: 300px;
 
 html {
     padding: 0;
@@ -195,7 +197,12 @@ p {
 // CSS-only slider stolen from https://css-tricks.com/css-only-carousel/
 
 .slider {
-    width: $slider-width;
+    @media all and (min-width: $slider-breakpoint) {
+        width: $slider-width;
+    }
+    @media all and (max-width: $slider-breakpoint) {
+        width: $slider-width-mobile;
+    }
     text-align: center;
     overflow: hidden;
     margin-left: auto;
@@ -211,7 +218,12 @@ p {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
 
-    scroll-snap-points-x: repeat($slider-width);
+    @media all and (min-width: $slider-breakpoint) {
+        scroll-snap-points-x: repeat($slider-width);
+    }
+    @media all and (max-width: $slider-breakpoint) {
+        scroll-snap-points-x: repeat($slider-width-mobile);
+    }
     scroll-snap-type: mandatory;
 }
 
@@ -232,8 +244,14 @@ p {
 .slides > div {
     scroll-snap-align: start;
     flex-shrink: 0;
-    width: $slider-width;
-    height: $slider-width;
+    @media all and (min-width: $slider-breakpoint) {
+        width: $slider-width;
+        height: $slider-width;
+    }
+    @media all and (max-width: $slider-breakpoint) {
+        width: $slider-width-mobile;
+        height: $slider-width-mobile;
+    }
     margin-right: 50px;
     border-radius: 10px;
     background: #eee;
