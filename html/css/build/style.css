@@ -163,7 +163,7 @@ p {
   margin: 0.5em 0;
   text-align: left;
   font-size: 1.5em;
-  list-style: none;
+  list-style-image: url("../../imgs/columbine.png");
 }
 .things-to-do li h3, .deets li h3 {
   font-size: 1.5em;
