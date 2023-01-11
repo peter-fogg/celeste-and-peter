@@ -242,6 +242,10 @@ p {
     @media all and (min-width: $slider-breakpoint) {
         width: $slider-width;
     }
+    @media all and (min-width: $slider-breakpoint + 200px) {
+        float: right;
+        margin-left: 50px;
+    }
     @media all and (max-width: $slider-breakpoint) {
         width: $slider-width-mobile;
     }
