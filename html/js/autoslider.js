@@ -1,5 +1,3 @@
-// TODO this is not especially DRY
-const numSlides = 13 - 1;
 const slideWidth = window.matchMedia('(max-width: 600px)').matches ? 300 : 500;
 
 window.onload = function () {
