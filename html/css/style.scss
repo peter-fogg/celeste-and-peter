@@ -84,11 +84,23 @@ p {
 .float-right {
     float: right;
     margin-left: 50px;
+    @media all and (max-width: 400px) {
+        margin-left: 0;
+    }
 }
 
-.float-left {
-    float: left;
-    margin-right: 50px;
+@media all and (max-width: 400px) {
+    .float-left {
+        float: right;
+        margin-right: -20px;
+    }
+}
+
+@media all and (min-width: 400px) {
+    .float-left {
+        float: left;
+        margin-right: 50px;
+    }
 }
 
 #train {
