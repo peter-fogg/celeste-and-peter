@@ -19,6 +19,7 @@ body {
     color: $font-color;
     font-family: $sans-serif-font;
     padding: 0;
+    padding-bottom: 30px;
     margin: 0;
 }
 
@@ -80,11 +81,36 @@ p {
     }
 }
 
-#durango {
-    margin-left: auto;
-    margin-right: auto;
+.float-right {
+    float: right;
+    margin-left: 50px;
+}
+
+.float-left {
+    float: left;
+    margin-right: 50px;
+}
+
+#train {
     display: block;
-    width: 90%;
+    width: 30%;
+    border-radius: 10px;
+    // this is a bit of a hack to get around floated elements not
+    // being in the normal document flow -- trying to avoid the
+    // picture being right at the bottom of the page since it's the
+    // last one
+    margin-bottom: 30px;
+}
+
+#east-a {
+    display: block;
+    width: 30%;
+    border-radius: 10px;
+}
+
+#durango {
+    display: block;
+    width: 40%;
     border-radius: 10px;
 }
 
@@ -209,8 +235,6 @@ p {
     }
     text-align: center;
     overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .slides {

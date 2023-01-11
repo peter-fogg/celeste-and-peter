@@ -8,6 +8,7 @@ body {
   color: #546121;
   font-family: "Zen Maru Gothic", sans-bserif;
   padding: 0;
+  padding-bottom: 30px;
   margin: 0;
 }
 
@@ -63,11 +64,32 @@ p {
   margin: 0;
 }
 
-#durango {
-  margin-left: auto;
-  margin-right: auto;
+.float-right {
+  float: right;
+  margin-left: 50px;
+}
+
+.float-left {
+  float: left;
+  margin-right: 50px;
+}
+
+#train {
   display: block;
-  width: 90%;
+  width: 30%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+#east-a {
+  display: block;
+  width: 30%;
+  border-radius: 10px;
+}
+
+#durango {
+  display: block;
+  width: 40%;
   border-radius: 10px;
 }
 
@@ -177,8 +199,6 @@ p {
 .slider {
   text-align: center;
   overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
 }
 @media all and (min-width: 600px) {
   .slider {
