@@ -26,6 +26,10 @@ a {
     color: $font-color;
 }
 
+.hidden {
+    display: none;
+}
+
 .main-container {
     margin: auto;
     width: 80%;
@@ -308,4 +312,41 @@ p {
     .slider > a {
         display: none;
     }
+}
+
+#slider-buttons {
+    margin-top: 10px;
+
+    button {
+        content: "";
+        background-size: 100% 100%;
+        display: inline-block;
+        height: 25px;
+        width:25px;
+        border: none;
+        background-color: $bg-color;
+        position: relative;
+        padding: 10px;
+    }
+}
+
+#slider-back {
+    background-image:url('../../imgs/left-arrow.png');
+    @media all and (min-width: $slider-breakpoint) {
+        right: $slider-width/2 - 50px;
+    }
+    @media all and (max-width: $slider-breakpoint) {
+        right: $slider-width-mobile/2 - 50px;
+    }
+}
+
+#slider-forward {
+    background-image:url('../../imgs/right-arrow.png');
+    @media all and (min-width: $slider-breakpoint) {
+        left: $slider-width/2 - 50px;
+    }
+    @media all and (max-width: $slider-breakpoint) {
+        left: $slider-width-mobile/2 - 50px;
+    }
+
 }
