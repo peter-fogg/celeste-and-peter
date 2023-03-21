@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  {% include 'head.html' %}
+
+  <body>
+    {% include 'nav_bar.html' %}
+    <div class="title-container">
+      <div class="title-block">
+        <h1>Celeste and Peter are getting married.</h1>
+        <h2>June 10th. 2023. The Ridgewood Event Center, Hesperus, CO.</h2>
+        <h2>We'd love for you to come.</h2>
+      </div>
+      <div class="title-image">
+        <img src="{{ url_for('static', filename='imgs/IMG_5412.jpg') }}" >
+      </div>
+    </div>
+  </body>
+</html>

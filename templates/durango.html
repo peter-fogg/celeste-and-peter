@@ -1,21 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" type="text/css" href="./css/build/style.css">
-    <link href="https://fonts.bunny.net/css?family=cantata-one:400|zen-maru-gothic:400" rel="stylesheet" />
-    <title>Celeste and Peter</title>
-  </head>
+  {% include 'head.html' %}
   
   <body>
-    <div class="nav-bar">
-      <ul class="nav-links">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./details.html">Details</a></li>
-        <li><a href="./durango.html">Durango</a></li>
-      </ul>
-    </div>
+    {% include 'nav_bar.html' %}
 
     <div class="main-container">
       <h1 class="subpage-title">Durango, Colorado</h1>
@@ -23,7 +11,7 @@
       <h2>Things to do while you're visiting</h2>
 
       <ul class="things-to-do">
-        <img class="float-left" id="durango" src="./imgs/durango.jpg">
+        <img class="float-left" id="durango" src="{{ url_for('static', filename='./imgs/durango.jpg') }}">
 
         <li>
           <h3>Check out our charming downtown</h3>
@@ -75,7 +63,7 @@
           science museum located in an old power station right on the
           river.
         </li>
-        <img class="float-right" id="east-a" src="./imgs/east-a.jpg">
+        <img class="float-right" id="east-a" src="{{ url_for('static', filename='./imgs/east-a.jpg') }}">
         <li>
           <h3>Sample the local rock climbing</h3>
           
@@ -109,7 +97,7 @@
           National Park</a> is a forty minute drive away and offers
           amazing views of the Four Corners region.
         </li>
-        <img class="float-left" id="train" src="./imgs/train.jpg">
+        <img class="float-left" id="train" src="{{ url_for('static', filename='./imgs/train.jpg') }}">
         <li>
           <h3>Take the historic train to Silverton</h3>
 
