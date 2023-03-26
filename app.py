@@ -1,12 +1,14 @@
 import os
 
 import flask as f
+from sqlalchemy import func
 
-from models import db
+from models import db, RSVP, Guest
 
 app = f.Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config['SIMILARITY_THRESHOLD'] = os.environ['SIMILARITY_THRESHOLD']
 
 db.init_app(app)
 
@@ -29,12 +31,36 @@ def durango():
 def rsvp():
     return f.render_template('rsvp.html')
 
-@app.route('/rsvp', methods=['POST'])
-def rsvp_post():
+@app.route('/rsvp_for', methods=['GET'])
+def rsvp_for():
+    name = f.request.args.get('name')
+    if name is None:
+        similar_names = db.session.query(Guest).all()
+    else:
+        similar_names = db.session.query(Guest).filter(
+            func.similarity(Guest.name, name)
+            > app.config['SIMILARITY_THRESHOLD']
+        ).order_by(
+            # There is likely a more performant way to do this, but
+            # the DB is so small (< 150 names) it really won't matter
+            func.similarity(Guest.name, name).desc()
+        ).all()
+    return f.render_template('rsvp_form.html', similar_names=similar_names)
+
+@app.route('/rsvp_for', methods=['POST'])
+def rsvp_for_post():
     form = f.request.form
     if form.get('coming') is None:
         return f.render_template('not_coming.html')
     # TODO: add error handling in case of missing data/wrong name/etc.
+    rsvp = RSVP(
+        name=form.get('name'),
+        coming=True,
+        bus=form.get('bus'),
+        diet=form.get('diet')
+    )
+    db.session.add(rsvp)
+    db.session.commit()
     return f.render_template('thanks.html', info=dict(form))
 
 @app.errorhandler(404)
