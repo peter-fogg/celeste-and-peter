@@ -36,7 +36,7 @@ a {
     width: 80%;
 
     h2 {
-        font-size: 2em;
+        font-size: 2rem;
     }
 }
 
@@ -369,20 +369,20 @@ a {
 #slider-back {
     background-image:url('../../imgs/left-arrow.png');
     @media all and (min-width: $slider-breakpoint) {
-        right: $slider-width/2 - 50px;
+        right: calc($slider-width/2 - 50px);
     }
     @media all and (max-width: $slider-breakpoint) {
-        right: $slider-width-mobile/2 - 50px;
+        right: calc($slider-width-mobile/2 - 50px);
     }
 }
 
 #slider-forward {
     background-image:url('../../imgs/right-arrow.png');
     @media all and (min-width: $slider-breakpoint) {
-        left: $slider-width/2 - 50px;
+        left: calc($slider-width/2 - 50px);
     }
     @media all and (max-width: $slider-breakpoint) {
-        left: $slider-width-mobile/2 - 50px;
+        left: calc($slider-width-mobile/2 - 50px);
     }
 
 }
