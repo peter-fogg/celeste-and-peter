@@ -30,18 +30,18 @@ a {
 
 .subpage-title {
   font-family: "Cantata One", serif;
-  font-size: 3em;
+  font-size: 3rem;
 }
 @media all and (min-width: 800px) {
   .subpage-title {
-    font-size: 5em;
+    font-size: 5rem;
   }
 }
 
 .title-container {
   display: flex;
   flex-flow: row wrap;
-  margin: 0 2em;
+  margin: 0 2rem;
   width: 80%;
 }
 .title-container * {
@@ -51,12 +51,12 @@ a {
 
 .title-block h1 {
   font-family: "Cantata One", serif;
-  font-size: 2em;
+  font-size: 2rem;
   margin: 0;
 }
 .title-block h2 {
   font-family: "Alatsi", serif;
-  font-size: 1em;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -112,10 +112,10 @@ a {
     flex: 2 0 0;
   }
   .title-block h1 {
-    font-size: 5em;
+    font-size: 5rem;
   }
   .title-block h2 {
-    font-size: 3em;
+    font-size: 3rem;
   }
 }
 @media all and (min-width: 1280px) {
@@ -126,15 +126,15 @@ a {
     flex: 2 0 0;
   }
   .title-block h1 {
-    font-size: 6em;
+    font-size: 6rem;
   }
   .title-block h2 {
-    font-size: 2em;
+    font-size: 2rem;
   }
 }
 .nav-bar {
   background-color: #ce9f51;
-  padding: 0 2em;
+  padding: 0 2rem;
   padding-left: 0;
   position: relative;
 }
@@ -167,18 +167,18 @@ a {
 .nav-links li a {
   display: block;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 2rem;
 }
 @media all and (min-width: 900px) {
   .nav-links li a {
-    padding: 0.5em 1em;
+    padding: 1rem 2rem;
   }
 }
 @media all and (max-width: 900px) {
   .nav-links li a {
-    padding: 1em;
-    padding-top: 1em;
-    font-size: 0.75em;
+    padding: 1rem;
+    padding-top: 1rem;
+    font-size: 0.75rem;
   }
 }
 .nav-links li:hover {
@@ -194,13 +194,13 @@ a {
   text-align: center;
 }
 .things-to-do li, .deets li {
-  margin: 0.5em 0;
+  margin: 0.5rem 0;
   text-align: left;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   list-style-image: url("../../imgs/columbine.png");
 }
 .things-to-do li h3, .deets li h3 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin: 0;
 }
 
