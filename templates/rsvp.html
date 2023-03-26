@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  {% include 'head.html' %}
+
+  <body>
+    {% include 'nav_bar.html' %}
+
+    <form method="POST" name="rsvp">
+      <label for="name">Your name:</label>
+      <input type="text" id="name" name="name"  />
+      <br />
+
+      <label for="coming">Will you be able to make it?</label>
+      <input type="checkbox" id="coming" name="coming" />
+      <br />
+
+      <label for="guests">How many guests are you RSVPing for?</label>
+      <input type="number" id="guests" name="guests" min="0" value="0" required />
+      <br />
+
+      <!-- TODO: figure out bus count and update accordingly -->
+      <label for="bus">How many people plan on riding the bus? We have 45 total spots available.</label>
+      <input type="number" id="bus" name="bus" min="0" value="0" required />
+      <br />
+
+      <label for="diet">Any dietary restrictions we should know about?</label>
+      <input type="text" id="diet" name="diet" required />
+      <br />
+
+      <input type="submit" value="RSVP!" />
+    </form>
+  </body>
+</html>
