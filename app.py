@@ -56,6 +56,7 @@ def rsvp_for_post():
     rsvp = RSVP(
         name=form.get('name'),
         coming=True,
+        guests=form.get('guests'),
         bus=form.get('bus'),
         diet=form.get('diet')
     )
