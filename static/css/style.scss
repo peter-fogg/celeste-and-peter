@@ -386,3 +386,20 @@ a {
     }
 
 }
+
+.rsvp-form {
+    width: 80%;
+    margin: auto;
+
+    .rsvp-section {
+        margin: .5rem 0;
+
+        label {
+            font-size: 1.5rem;
+        }
+
+        input {
+            margin-left: .5rem;
+        }
+    }
+}

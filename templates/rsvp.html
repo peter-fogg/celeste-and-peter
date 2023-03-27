@@ -5,10 +5,12 @@
   <body>
     {% include 'nav_bar.html' %}
 
-    <h1>First off, what's your name?</h1>
-    <form method="GET" name="rsvp_for" action="{{ url_for('rsvp_for') }}">
-      <input type="text" id="name" name="name" />
-      <input type="submit" />
-    </form>
+    <div class="rsvp-form">
+      <h1 class="subpage-title">First off, what's your name?</h1>
+      <form method="GET" name="rsvp_for" action="{{ url_for('rsvp_for') }}">
+        <input type="text" id="name" name="name" />
+        <input type="submit" />
+      </form>
+    </div>
   </body>
 </html>

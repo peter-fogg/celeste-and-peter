@@ -373,4 +373,18 @@ a {
   }
 }
 
+.rsvp-form {
+  width: 80%;
+  margin: auto;
+}
+.rsvp-form .rsvp-section {
+  margin: 0.5rem 0;
+}
+.rsvp-form .rsvp-section label {
+  font-size: 1.5rem;
+}
+.rsvp-form .rsvp-section input {
+  margin-left: 0.5rem;
+}
+
 /*# sourceMappingURL=style.css.map */
