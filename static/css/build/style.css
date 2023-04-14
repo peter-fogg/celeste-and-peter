@@ -390,11 +390,21 @@ a {
   }
 }
 .rsvp-form .rsvp-section label {
-  font-size: 3rem;
+  font-size: 2rem;
   grid-column: 1/3;
 }
-.rsvp-form .rsvp-section label + label {
-  grid-column: 3;
+@media all and (min-width: 800px) {
+  .rsvp-form .rsvp-section label.radio {
+    grid-column: 1;
+  }
+  .rsvp-form .rsvp-section label.radio + label {
+    grid-column: 3;
+  }
+}
+@media all and (max-width: 800px) {
+  .rsvp-form .rsvp-section label {
+    display: block;
+  }
 }
 .rsvp-form .rsvp-section input[type=radio] {
   -webkit-appearance: none;
@@ -439,13 +449,15 @@ a {
     float: right;
     padding-left: 3rem;
     height: 5rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 @media all and (max-width: 800px) {
   .rsvp-form .rsvp-section input:not([type=radio]) {
     height: 3rem;
     font-size: 1.5rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
   }
 }
 .rsvp-form .rsvp-section input::placeholder {
@@ -471,13 +483,15 @@ a {
     float: right;
     padding-left: 3rem;
     height: 5rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 @media all and (max-width: 800px) {
   #rsvp-name {
     height: 3rem;
     font-size: 1.5rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
   }
 }
 

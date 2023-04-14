@@ -50,18 +50,18 @@ def rsvp_for():
 @app.route('/rsvp_for', methods=['POST'])
 def rsvp_for_post():
     form = f.request.form
-    if form.get('coming') == 'not-coming':
-        return f.render_template('not_coming.html')
-    # TODO: add error handling in case of missing data/wrong name/etc.
     rsvp = RSVP(
-        name=form.get('name'),
-        coming=True,
+        guest_id=db.session.execute(db.select(Guest).filter_by(name=form.get('name'))).scalar_one().id,
+        coming=form.get('coming') == 'coming',
         guests=form.get('guests'),
         bus=form.get('bus'),
         diet=form.get('diet')
     )
     db.session.add(rsvp)
     db.session.commit()
+    # TODO: add error handling in case of missing data/wrong name/etc.
+    if form.get('coming') == 'not-coming':
+        return f.render_template('not_coming.html')
     return f.render_template('thanks.html', info=dict(form))
 
 @app.errorhandler(404)
