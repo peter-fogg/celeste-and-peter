@@ -4,6 +4,7 @@ $serif-font-head: "Cantata One", serif;
 $serif-font-sub: "Alatsi", serif;
 $sans-serif-font: "Zen Maru Gothic", sans-bserif;
 $font-color: #546121;
+$sandstone-red: #bc6f40;
 
 $slider-breakpoint: 600px;
 $slider-width: 500px;
@@ -45,6 +46,7 @@ a {
     font-size: 3rem;
 
     @media all and (min-width: 800px) {
+        margin-bottom: 0;
         font-size: 5rem;
     }
 }
@@ -159,13 +161,16 @@ a {
         h2 {
             font-size: 2rem;
         }
+
+        p {
+            font-size: 2rem;
+            margin: 0;
+        }
     }
 }
 
 .nav-bar {
     background-color: $nav-color;
-    padding: 0 2rem;
-    padding-left: 0;
     position: relative;
 
     @media all and (max-width: 900px) {
@@ -206,7 +211,7 @@ a {
             -o-transition: background-color .2s ease-out;
             -webkit-transition: background-color .2s ease-out;
             transition: background-color .2s ease-out;
-            background-color: #bc6f40;
+            background-color: $sandstone-red;
         } /* CSS is a fucking joke */
         -moz-transition: background-color .2s ease-out;
         -o-transition: background-color .2s ease-out;
@@ -387,19 +392,95 @@ a {
 
 }
 
+@mixin form-text {
+    border: none;
+    color: $font-color;
+    font-family: $sans-serif-font;
+    background-color: darken($bg-color, 5%);
+    margin-top: 0;
+    box-shadow: 1px 1px 2px 2px $font-color;
+    @media all and (min-width: 800px) {
+        float: right;
+        padding-left: 3rem;
+        height: 5rem; // TODO: check this on mobile
+        font-size: 2.5rem;
+    }
+    @media all and (max-width: 800px) {
+        height: 3rem; // TODO: check this on mobile
+        font-size: 1.5rem;
+    }
+}
+
 .rsvp-form {
     width: 80%;
     margin: auto;
 
     .rsvp-section {
-        margin: .5rem 0;
+        @media all and (min-width: 800px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        margin: 2rem 0;
 
         label {
-            font-size: 1.5rem;
+            font-size: 3rem;
+            grid-column: 1/3;
+
+            & + label {
+                grid-column: 3;
+            }
         }
 
-        input {
-            margin-left: .5rem;
+        input[type="radio"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: $bg-color;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1em;
+            height: 1em;
+            border: 0.15em solid currentColor;
+            border-radius: 0.15em;
+            transform: translateY(0.2em);
+            place-content: center;
+            box-shadow: 2px 2px 2px $font-color;
+
+            &::before {
+                content: "";
+                transform: scale(0);
+                width: 0.5em;
+                height: 0.5em;
+                translate: .1em .1em;
+                display: block;
+                transition: 120ms transform ease-in-out;
+                box-shadow: inset 1em 1em $font-color;
+            }
+
+            &:checked::before {
+                content: "";
+                transform: scale(1);
+            }
+        }
+
+        input:not([type="radio"]) {
+            @include form-text;
+            grid-column: 3;
+        }
+
+        input::placeholder {
+            color: lighten($font-color, 40%);
+        }
+
+        input[type="submit"] {
+            background-color: lighten($bg-color, 1%);
+            grid-column: 2;
+            padding: 0 2rem;
         }
     }
+}
+
+#rsvp-name {
+    @include form-text;
+    width: 100%;
 }

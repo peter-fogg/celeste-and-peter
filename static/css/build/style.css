@@ -34,6 +34,7 @@ a {
 }
 @media all and (min-width: 800px) {
   .subpage-title {
+    margin-bottom: 0;
     font-size: 5rem;
   }
 }
@@ -131,11 +132,13 @@ a {
   .title-block h2 {
     font-size: 2rem;
   }
+  .title-block p {
+    font-size: 2rem;
+    margin: 0;
+  }
 }
 .nav-bar {
   background-color: #ce9f51;
-  padding: 0 2rem;
-  padding-left: 0;
   position: relative;
 }
 @media all and (max-width: 900px) {
@@ -378,13 +381,104 @@ a {
   margin: auto;
 }
 .rsvp-form .rsvp-section {
-  margin: 0.5rem 0;
+  margin: 2rem 0;
+}
+@media all and (min-width: 800px) {
+  .rsvp-form .rsvp-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 .rsvp-form .rsvp-section label {
-  font-size: 1.5rem;
+  font-size: 3rem;
+  grid-column: 1/3;
 }
-.rsvp-form .rsvp-section input {
-  margin-left: 0.5rem;
+.rsvp-form .rsvp-section label + label {
+  grid-column: 3;
+}
+.rsvp-form .rsvp-section input[type=radio] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fcebcf;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1em;
+  height: 1em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(0.2em);
+  place-content: center;
+  box-shadow: 2px 2px 2px #546121;
+}
+.rsvp-form .rsvp-section input[type=radio]::before {
+  content: "";
+  transform: scale(0);
+  width: 0.5em;
+  height: 0.5em;
+  translate: 0.1em 0.1em;
+  display: block;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #546121;
+}
+.rsvp-form .rsvp-section input[type=radio]:checked::before {
+  content: "";
+  transform: scale(1);
+}
+.rsvp-form .rsvp-section input:not([type=radio]) {
+  border: none;
+  color: #546121;
+  font-family: "Zen Maru Gothic", sans-bserif;
+  background-color: #fbe1b7;
+  margin-top: 0;
+  box-shadow: 1px 1px 2px 2px #546121;
+  grid-column: 3;
+}
+@media all and (min-width: 800px) {
+  .rsvp-form .rsvp-section input:not([type=radio]) {
+    float: right;
+    padding-left: 3rem;
+    height: 5rem;
+    font-size: 2.5rem;
+  }
+}
+@media all and (max-width: 800px) {
+  .rsvp-form .rsvp-section input:not([type=radio]) {
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+}
+.rsvp-form .rsvp-section input::placeholder {
+  color: #c1d27c;
+}
+.rsvp-form .rsvp-section input[type=submit] {
+  background-color: #fcedd4;
+  grid-column: 2;
+  padding: 0 2rem;
+}
+
+#rsvp-name {
+  border: none;
+  color: #546121;
+  font-family: "Zen Maru Gothic", sans-bserif;
+  background-color: #fbe1b7;
+  margin-top: 0;
+  box-shadow: 1px 1px 2px 2px #546121;
+  width: 100%;
+}
+@media all and (min-width: 800px) {
+  #rsvp-name {
+    float: right;
+    padding-left: 3rem;
+    height: 5rem;
+    font-size: 2.5rem;
+  }
+}
+@media all and (max-width: 800px) {
+  #rsvp-name {
+    height: 3rem;
+    font-size: 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

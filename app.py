@@ -50,7 +50,7 @@ def rsvp_for():
 @app.route('/rsvp_for', methods=['POST'])
 def rsvp_for_post():
     form = f.request.form
-    if form.get('coming') is None:
+    if form.get('coming') == 'not-coming':
         return f.render_template('not_coming.html')
     # TODO: add error handling in case of missing data/wrong name/etc.
     rsvp = RSVP(

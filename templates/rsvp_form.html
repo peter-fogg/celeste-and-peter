@@ -9,7 +9,7 @@
       <h1 class="subpage-title">OK, let's get some details.</h1>
       <form method="POST" name="rsvp">
         <div class="rsvp-section">
-          <label for="name">Your name:</label>
+          <label for="name">Your name</label>
           {% if similar_names | length == 1: %}
           <input type="text" id="name" name="name" value="{{ similar_names[0].name }}" readonly />
           {% elif similar_names | length == 0: %}
@@ -24,8 +24,14 @@
         </div>
 
         <div class="rsvp-section">
-          <label for="coming">Will you be able to make it?</label>
-          <input type="checkbox" id="coming" name="coming" />
+          <label for="coming">
+            I'll be there!
+            <input type="radio" id="coming" value="coming" name="coming" />
+          </label>
+          <label for="not-coming">
+            I can't make it!
+            <input type="radio" id="not-coming" value="not-coming" name="coming" />
+          </label>
         </div>
 
         <div class="rsvp-section">
@@ -41,11 +47,19 @@
 
         <div class="rsvp-section">
           <label for="diet">Any dietary restrictions we should know about?</label>
-          <input type="text" id="diet" name="diet" value="" />
+          <input
+            type="text"
+            id="diet"
+            name="diet"
+            value=""
+            placeholder="Gluten, dairy, meat..."
+            />
           <br />
         </div>
 
-        <input type="submit" value="RSVP!" />
+        <div class="rsvp-section">
+          <input type="submit" value="RSVP!" />
+        </div>
       </form>
     </div>
   </body>
