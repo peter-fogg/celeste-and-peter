@@ -473,6 +473,10 @@ a {
             }
         }
 
+        select {
+            @include form-text;
+            grid-column: 3;
+        }
         input:not([type="radio"]) {
             @include form-text;
             grid-column: 3;

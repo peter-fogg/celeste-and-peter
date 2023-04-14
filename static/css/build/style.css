@@ -435,6 +435,31 @@ a {
   content: "";
   transform: scale(1);
 }
+.rsvp-form .rsvp-section select {
+  border: none;
+  color: #546121;
+  font-family: "Zen Maru Gothic", sans-bserif;
+  background-color: #fbe1b7;
+  margin-top: 0;
+  box-shadow: 1px 1px 2px 2px #546121;
+  grid-column: 3;
+}
+@media all and (min-width: 800px) {
+  .rsvp-form .rsvp-section select {
+    float: right;
+    padding-left: 3rem;
+    height: 5rem;
+    font-size: 2rem;
+  }
+}
+@media all and (max-width: 800px) {
+  .rsvp-form .rsvp-section select {
+    height: 3rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+}
 .rsvp-form .rsvp-section input:not([type=radio]) {
   border: none;
   color: #546121;
