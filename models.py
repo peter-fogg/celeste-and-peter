@@ -6,6 +6,7 @@ db = SQLAlchemy()
 class Guest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
+    rsvp_group = db.Column(db.Integer)
 
 class RSVP(db.Model):
     id = db.Column(db.Integer, primary_key=True)
