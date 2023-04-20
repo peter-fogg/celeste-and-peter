@@ -9,7 +9,15 @@
       <div class="title-block">
         <h2>Thanks! We can't wait to see you!</h2>
         <p>Just take a look to be sure this is correct:</p>
-        <p>{{ info['name']|e }} is coming as a party of {{ info['guests']|e }}, with {{ info['bus']|e }} riding the bus. Dietary restrictions are: {{ info['diet']|e }}.</p>
+        <p>
+          {{ info['name']|e }} is coming, and is
+          {% if info['bus'] != 'on': %} not {% endif %}riding the
+          bus. Dietary restrictions are: {{ info['diet']|e }}.
+        </p>
+        <p>
+          If you'd like to RSVP for someone else, please head back to
+          the <a href="{{ url_for('rsvp') }}">RSVP page</a>!
+        </p>
         <p>If any of the above looks wrong, please let us know! You can email me at <a href="mailto:peter.p.fogg@gmail.com">peter.p.fogg@gmail.com</a>.</p>
       </div>
     </div>

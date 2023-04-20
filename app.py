@@ -35,28 +35,40 @@ def rsvp():
 def rsvp_for():
     name = f.request.args.get('name')
     if name is None:
-        similar_names = db.session.query(Guest).all()
-    else:
-        similar_names = db.session.query(Guest).filter(
-            func.similarity(Guest.name, name)
-            > app.config['SIMILARITY_THRESHOLD']
-        ).order_by(
-            # There is likely a more performant way to do this, but
-            # the DB is so small (< 150 names) it really won't matter
-            func.similarity(Guest.name, name).desc()
-        ).all()
-    return f.render_template('rsvp_form.html', similar_names=similar_names)
+        return f.redirect('/rsvp')
+    guest = db.session.query(Guest).filter(
+        func.similarity(Guest.name, name)
+        > app.config['SIMILARITY_THRESHOLD']
+    ).order_by(
+        # There is likely a more performant way to do this, but
+        # the DB is so small (< 150 names) it really won't matter
+        func.similarity(Guest.name, name).desc()
+    ).first()
+    bus_num = 2 - db.session.query(RSVP).filter_by(bus=True).count()
+    return f.render_template('rsvp_form.html', guest=guest, bus_num=bus_num)
 
 @app.route('/rsvp_for', methods=['POST'])
 def rsvp_for_post():
     form = f.request.form
-    rsvp = RSVP(
-        guest_id=db.session.execute(db.select(Guest).filter_by(name=form.get('name'))).scalar_one().id,
-        coming=form.get('coming') == 'coming',
-        guests=form.get('guests'),
-        bus=form.get('bus'),
-        diet=form.get('diet')
-    )
+    if 'guest-id' in form: # Actually a person we want there
+        rsvp = RSVP(
+            guest_id=db.session.execute(
+                db.select(Guest.id).filter_by(id=form.get('guest-id'))
+            ).scalar_one(),
+            coming=form.get('coming') == 'coming',
+            bus=form.get('bus') == 'on',
+            diet=form.get('diet')
+        )
+    else: # Not invited or they typed their name horrendously wrong
+        guest = Guest(name=form.get('name'))
+        db.session.add(guest)
+        db.session.commit()
+        rsvp = RSVP(
+            guest_id=guest.id,
+            coming=form.get('coming') == 'coming',
+            bus=form.get('bus') == 'on',
+            diet=form.get('diet')
+        )
     db.session.add(rsvp)
     db.session.commit()
     # TODO: add error handling in case of missing data/wrong name/etc.

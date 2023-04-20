@@ -9,17 +9,17 @@
       <h1 class="subpage-title">OK, let's get some details.</h1>
       <form method="POST" name="rsvp">
         <div class="rsvp-section">
+          {% if guest: %}
           <label for="name">Your name</label>
-          {% if similar_names | length == 1: %}
-          <input type="text" id="name" name="name" value="{{ similar_names[0].name }}" readonly />
-          {% elif similar_names | length == 0: %}
-          <input type="text" id="name" name="name" />
-          {% else: %}
-          <select id="name" name="name" value="{{ similar_names[0] }}">
-            {% for guest in similar_names: %}
-            <option value="{{ guest.name }}">{{ guest.name }}</option>
-            {% endfor %}
-          </select>
+          <input type="text" id="name" name="name" value="{{ guest.name }}" readonly />
+          <input type="text" name="guest-id" value="{{ guest.id }}" class="hidden" />
+          {% else %}
+          <label for="name">
+            I'm not recognizing your name -- maybe try again with the
+            name that was on your invitation? If that doesn't work,
+            just enter your name here!
+          </label>
+          <input type="text" id="name" name="name" placeholder="Piñon the Cat" />
           {% endif %}
         </div>
 
@@ -34,16 +34,13 @@
           </label>
         </div>
 
+        {% if bus_num > 0: %}
         <div class="rsvp-section">
-          <label for="guests">How many guests are you RSVPing for?</label>
-          <input type="number" id="guests" name="guests" min="0" value="0" required />
+          <label for="bus">Check here if you'd like to ride the bus! We've got {{ bus_num }} spots left.</label>
+          <input type="checkbox" id="bus" name="bus" />
         </div>
+        {% endif %}
 
-        <div class="rsvp-section">
-          <!-- TODO: figure out bus count and update accordingly -->
-          <label for="bus">How many people plan on riding the bus? We have 45 total spots available.</label>
-          <input type="number" id="bus" name="bus" min="0" value="0" required />
-        </div>
 
         <div class="rsvp-section">
           <label for="diet">Any dietary restrictions we should know about?</label>
@@ -52,7 +49,7 @@
             id="diet"
             name="diet"
             value=""
-            placeholder="Gluten, dairy, meat..."
+            placeholder="Gluten,dairy, meat..."
             />
           <br />
         </div>

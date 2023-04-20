@@ -439,32 +439,36 @@ a {
             @media all and (max-width: 800px) {
                 display: block;
             }
+
+            &.other-guest {
+                grid-column: 1;
+            }
         }
 
-        input[type="radio"] {
+        input[type="radio"], input[type="checkbox"] {
             -webkit-appearance: none;
             appearance: none;
             background-color: $bg-color;
             margin: 0;
             font: inherit;
             color: currentColor;
-            width: 1em;
-            height: 1em;
-            border: 0.15em solid currentColor;
-            border-radius: 0.15em;
-            transform: translateY(0.2em);
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 0.15rem solid currentColor;
+            border-radius: 0.15rem;
+            transform: translateY(-0.2rem);
             place-content: center;
             box-shadow: 2px 2px 2px $font-color;
 
             &::before {
                 content: "";
                 transform: scale(0);
-                width: 0.5em;
-                height: 0.5em;
-                translate: .1em .1em;
+                width: .75rem;
+                height: .75rem;
+                translate: .1rem .15rem;
                 display: block;
                 transition: 120ms transform ease-in-out;
-                box-shadow: inset 1em 1em $font-color;
+                box-shadow: inset 1rem 1rem $font-color;
             }
 
             &:checked::before {
@@ -473,11 +477,16 @@ a {
             }
         }
 
+        input[type="checkbox"] {
+            transform: translateY(1rem);
+        }
+
         select {
             @include form-text;
             grid-column: 3;
         }
-        input:not([type="radio"]) {
+
+        input:not([type="radio"], [type="checkbox"]) {
             @include form-text;
             grid-column: 3;
         }
@@ -490,6 +499,18 @@ a {
             background-color: lighten($bg-color, 1%);
             grid-column: 2;
             padding: 0 2rem;
+        }
+
+        h3 {
+            grid-column: 1;
+
+            & + h3 {
+                grid-column: 2;
+
+                & + h3 {
+                    grid-column: 3;
+                }
+            }
         }
     }
 }
