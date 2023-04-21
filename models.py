@@ -7,6 +7,7 @@ class Guest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     has_plus_one = db.Column(db.Boolean)
+    has_rehearsal_invite = db.Column(db.Boolean)
 
 class RSVP(db.Model):
     id = db.Column(db.Integer, primary_key=True)

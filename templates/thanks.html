@@ -12,8 +12,15 @@
         <p>
           {{ info['name']|e }} is coming, and is
           {% if info['bus'] != 'on': %} not {% endif %}riding the
-          bus. Dietary restrictions are: {{ info['diet']|e }}.
+          bus. Dietary restrictions are: {% if info['diet']: %}{{ info['diet']|e }}{% else %} none {% endif %}.
         </p>
+        {% if guest.has_rehearsal_invite: %}
+        <p>
+          We'll be doing a rehearsal dinner at 11th Street Station in
+          Durango on Friday night (June 9th) -- we'd love to see you there!
+        </p>
+        {% endif %}
+        <p>
         <p>
           If you'd like to RSVP for someone else, please head back to
           the <a href="{{ url_for('rsvp') }}">RSVP page</a>!
