@@ -34,6 +34,13 @@
           </label>
         </div>
 
+        {% if guest.has_plus_one: %}
+        <div class="rsvp-section">
+          <label for="plus-one">Are you bringing a plus one?</label>
+          <input type="checkbox" id="plus-one" name="plus-one" />
+        </div>
+        {% endif %}
+
         {% if bus_num > 0: %}
         <div class="rsvp-section">
           <label for="bus">Check here if you'd like to ride the bus! We've got {{ bus_num }} spots left.</label>

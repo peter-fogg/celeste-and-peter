@@ -6,6 +6,7 @@ db = SQLAlchemy()
 class Guest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
+    has_plus_one = db.Column(db.Boolean)
 
 class RSVP(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -13,3 +14,4 @@ class RSVP(db.Model):
     coming = db.Column(db.Boolean)
     bus = db.Column(db.Boolean)
     diet = db.Column(db.String)
+    plus_one = db.Column(db.Boolean)

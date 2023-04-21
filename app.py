@@ -15,6 +15,8 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
 
+BUS_NUM = 45
+
 @app.route('/')
 def index():
     return f.render_template('index.html')
@@ -44,8 +46,12 @@ def rsvp_for():
         # the DB is so small (< 150 names) it really won't matter
         func.similarity(Guest.name, name).desc()
     ).first()
-    bus_num = 2 - db.session.query(RSVP).filter_by(bus=True).count()
-    return f.render_template('rsvp_form.html', guest=guest, bus_num=bus_num)
+    bus_num = BUS_NUM - db.session.query(RSVP).filter_by(bus=True).count()
+    return f.render_template(
+        'rsvp_form.html',
+        guest=guest,
+        bus_num=bus_num
+    )
 
 @app.route('/rsvp_for', methods=['POST'])
 def rsvp_for_post():
@@ -57,7 +63,8 @@ def rsvp_for_post():
             ).scalar_one(),
             coming=form.get('coming') == 'coming',
             bus=form.get('bus') == 'on',
-            diet=form.get('diet')
+            diet=form.get('diet'),
+            plus_one=form.get('plus-one', default=False)
         )
     else: # Not invited or they typed their name horrendously wrong
         guest = Guest(name=form.get('name'))
@@ -67,7 +74,8 @@ def rsvp_for_post():
             guest_id=guest.id,
             coming=form.get('coming') == 'coming',
             bus=form.get('bus') == 'on',
-            diet=form.get('diet')
+            diet=form.get('diet'),
+            plus_one=False
         )
     db.session.add(rsvp)
     db.session.commit()
