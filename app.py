@@ -85,6 +85,10 @@ def rsvp_for_post():
         return f.render_template('not_coming.html')
     return f.render_template('thanks.html', info=dict(form), guest=guest)
 
+@app.route('/gifts')
+def gifts():
+    return f.render_template('gifts.html')
+
 @app.errorhandler(404)
 def not_found(error):
     return f.render_template('404.html')

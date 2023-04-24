@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  {% include 'head.html' %}
+
+  <body>
+    {% include 'nav_bar.html' %}
+    <div class="title-container">
+      <div class="title-block">
+        
+        <h1>We're so glad you're celebrating this moment with us &mdash; that's the best gift of all!</h1>
+        <p>If you'd like to give us a gift, we'd love your help with a
+          down payment. We're also getting really excited for our
+          honeymoon in Morocco! Any help with either of these momentous occasions is very much appreciated.</p>
+        <p>Our Venmo accounts are @Celeste-Haverkamp and @Peter-Fogg, but checks are welcome as well!</p>
+      </div>
+      <div class="title-image">
+        <img width="500px" src="{{ url_for('static', filename='./imgs/bothy.jpg') }}" class="float-right">
+      </div>
+    </div>
+  </body>
+</html>
