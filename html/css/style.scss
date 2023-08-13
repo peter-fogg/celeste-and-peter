@@ -63,6 +63,23 @@ a {
     }
 }
 
+.photos {
+    display: grid;
+    @media all and (min-width: 800px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media all and (max-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    gap: 10px;
+
+    img {
+        display: inline;
+        border-radius: 30px;
+        width: 100%;
+    }
+}
+
 @media all and (min-width: 800px) {
     .title-block {
         flex: 2 0 0;

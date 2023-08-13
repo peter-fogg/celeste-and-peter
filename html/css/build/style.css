@@ -44,6 +44,26 @@ a {
   width: 100%;
 }
 
+.photos {
+  display: grid;
+  gap: 10px;
+}
+@media all and (min-width: 800px) {
+  .photos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media all and (max-width: 800px) {
+  .photos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.photos img {
+  display: inline;
+  border-radius: 30px;
+  width: 100%;
+}
+
 @media all and (min-width: 800px) {
   .title-block {
     flex: 2 0 0;
